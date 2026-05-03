@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body {
+    line-height: 1.6;
+    background: #f9f9f9;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: white;
+    position: sticky;
+    top: 0;
+  }
+  
+  .navbar a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* Hero */
+  .hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero span {
+    color: #007BFF;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Section */
+  .section {
+    padding: 80px 50px;
+    text-align: center;
+  }
+  
+  /* Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .card {
+    background: white;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .card img {
+    width: 100%;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Form */
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  form input, form textarea {
+    margin: 10px 0;
+    padding: 10px;
+  }
+  
+  button {
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+  }
+  
+  /* Animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s;
+  }
+  
+  .fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* RWD */
+  @media(max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
