@@ -124,3 +124,8 @@
   color: inherit;
   display: block;
 }
+
+.hero {
+  background: url('https://picsum.photos/1600/900?blur=3') center/cover;
+  color: white;
+}
