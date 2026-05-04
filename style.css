@@ -126,6 +126,5 @@
 }
 
 .hero {
-  background: url('https://picsum.photos/1600/900?blur=3') center/cover;
-  color: white;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
 }
