@@ -192,12 +192,12 @@
 }
 
 /* My Projects 區塊間距調整 */
-.projects {
-    padding-top: 80px;
+#projects {
+    padding: 100px 50px 100px 50px;
 }
 
-.projects h2 {
-    margin-bottom: 100px !important;   /* 主要控制這裡 */
+#projects h2 {
+    margin-bottom: 110px !important;
 }
 
 
