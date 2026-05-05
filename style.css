@@ -199,3 +199,61 @@
 .projects h2 {
     margin-bottom: 100px !important;   /* 主要控制這裡 */
 }
+
+
+
+.project-detail {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.project-content {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.project-image-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.project-info {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.project-info h1 {
+    margin-top: 0;
+    font-size: 2.8rem;
+}
+
+.category {
+    color: #007BFF;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.project-info h3 {
+    margin-top: 35px;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+/* 手機版自動變上下排列 */
+@media (max-width: 768px) {
+    .project-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
