@@ -8,7 +8,6 @@
   body {
     line-height: 1.6;
     background: #f9f9f9;
-     padding-top: 80px;
   }
   
   /* Navbar */
@@ -17,8 +16,7 @@
     justify-content: space-between;
     padding: 20px 50px;
     background: white;
-    position: sticky;
-    top: 0;
+
   }
   
   .navbar a {
