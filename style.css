@@ -129,29 +129,36 @@
 }
 
 
+/* About Me 區塊優化版 */
 .about-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+    display: flex;
+    align-items: flex-start;        /* 關鍵：頂部對齊 */
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
-
 
 .about-photo {
-  width: 450px;
-  height: 450px;
-  border-radius: 15px;
-  object-fit: cover;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 420px;
+    height: 420px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    flex-shrink: 0;                 /* 防止圖片被壓縮 */
 }
-
 
 .about-content {
-  max-width: 450px;
-  text-align: left;
+    max-width: 480px;
+    text-align: left;
+    padding-top: 10px;              /* 可微調這個值 */
 }
+
+.about-content h2 {
+    margin-top: 0;
+    font-size: 2.2rem;
+}
+
 
 .socials {
   margin-top: 15px;
