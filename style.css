@@ -148,15 +148,45 @@
     flex-shrink: 0;                 /* 防止圖片被壓縮 */
 }
 
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.about-photo {
+    width: 420px;
+    height: 420px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+}
+
 .about-content {
     max-width: 480px;
     text-align: left;
-    padding-top: 10px;              /* 可微調這個值 */
+    padding-top: 20px;
 }
 
-.about-content h2 {
+.contact-info {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border-left: 5px solid #007BFF;
+}
+
+.contact-info h3 {
     margin-top: 0;
-    font-size: 2.2rem;
+    margin-bottom: 18px;
+    color: #333;
 }
 
-
+.contact-info p {
+    margin: 10px 0;
+    color: #444;
+}
