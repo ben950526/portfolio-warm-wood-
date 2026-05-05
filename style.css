@@ -127,3 +127,39 @@
 .hero {
   background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
 }
+
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+
+.about-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+.about-content {
+  max-width: 450px;
+  text-align: left;
+}
+
+.socials {
+  margin-top: 15px;
+}
+
+.socials a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: 500;
+}
