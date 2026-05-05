@@ -140,8 +140,8 @@
 
 
 .about-photo {
-  width: 220px;
-  height: 220px;
+  width: 300px;
+  height: 300px;
   border-radius: 15px;
   object-fit: cover;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
