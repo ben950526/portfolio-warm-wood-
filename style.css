@@ -7,8 +7,8 @@
  
   body {
     line-height: 1.6;
-    background: #0c0c0c;
-    color: #e0e0e0;
+    background: #121212;
+    color: #e5e5e5;
   }
  
   /* Navbar */
@@ -16,14 +16,14 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
-    background: rgba(20, 20, 20, 0.95);
-    border-bottom: 1px solid #333;
+    background: #1e1e1e;
+    border-bottom: 1px solid #2a2a2a;
   }
  
   .navbar a {
     margin-left: 20px;
     text-decoration: none;
-    color: #bbbbbb;
+    color: #cccccc;
   }
  
   /* Hero */
@@ -33,11 +33,11 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #1a1a2e, #0f0f1e);
+    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
   }
  
   .hero span {
-    color: #60a5fa;
+    color: #7dd3fc;
   }
  
   .btn {
@@ -45,7 +45,7 @@
     margin-top: 15px;
     padding: 12px 28px;
     background: #ffffff;
-    color: #0f0f0f;
+    color: #111111;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 500;
@@ -55,7 +55,7 @@
   .section {
     padding: 80px 50px;
     text-align: center;
-    background: #0c0c0c;
+    background: #121212;
   }
  
   /* Grid */
@@ -66,10 +66,10 @@
   }
  
   .card {
-    background: #1a1a1a;
+    background: #1e1e1e;
     overflow: hidden;
     transition: transform 0.3s;
-    border: 1px solid #2a2a2a;
+    border: 1px solid #333333;
   }
  
   .card img {
@@ -78,7 +78,6 @@
  
   .card:hover {
     transform: scale(1.05);
-    border-color: #4a4a4a;
   }
  
   /* Form */
@@ -92,15 +91,15 @@
   form input, form textarea {
     margin: 10px 0;
     padding: 10px;
-    background: #1f1f1f;
+    background: #1e1e1e;
     border: 1px solid #444;
-    color: #e0e0e0;
+    color: #e5e5e5;
   }
  
   button {
     padding: 10px;
-    background: #60a5fa;
-    color: white;
+    background: #7dd3fc;
+    color: #111111;
     border: none;
   }
  
@@ -149,7 +148,7 @@
     height: 420px;
     border-radius: 20px;
     object-fit: cover;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
     flex-shrink: 0;
   }
 
@@ -162,9 +161,9 @@
   .contact-info {
     margin-top: 30px;
     padding: 25px;
-    background: #1a1a1a;
+    background: #1e1e1e;
     border-radius: 15px;
-    border-left: 5px solid #60a5fa;
+    border-left: 5px solid #7dd3fc;
   }
 
   .contact-info h3 {
@@ -210,7 +209,7 @@
     width: 100%;
     height: auto;
     border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
   }
 
   .project-info {
@@ -226,7 +225,7 @@
   }
 
   .category {
-    color: #60a5fa;
+    color: #7dd3fc;
     font-weight: 600;
     margin-bottom: 20px;
   }
@@ -245,7 +244,7 @@
     }
   }
 
-  /* Back Button - 低調版 */
+  /* Back Button */
   .back-btn {
     color: #bbbbbb;
     text-decoration: none;
@@ -256,6 +255,6 @@
   }
 
   .back-btn:hover {
-    color: #60a5fa;
+    color: #7dd3fc;
     text-decoration: underline;
   }
