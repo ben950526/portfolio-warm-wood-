@@ -7,37 +7,38 @@
  
   body {
     line-height: 1.6;
-    background: #121212;
+    background: #111111;
     color: #e5e5e5;
   }
  
-  /* Navbar */
+  /* Navbar - Apple風格 */
   .navbar {
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
-    background: #1e1e1e;
-    border-bottom: 1px solid #2a2a2a;
+    background: rgba(17, 17, 17, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #222222;
   }
  
   .navbar a {
     margin-left: 20px;
     text-decoration: none;
-    color: #cccccc;
+    color: #aaaaaa;
   }
  
-  /* Hero */
+  /* Hero - 乾淨簡約 */
   .hero {
     height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+    background: linear-gradient(135deg, #1a1a1a, #111111);
   }
  
   .hero span {
-    color: #7dd3fc;
+    color: #60a5fa;
   }
  
   .btn {
@@ -47,7 +48,7 @@
     background: #ffffff;
     color: #111111;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 9999px;
     font-weight: 500;
   }
  
@@ -55,7 +56,7 @@
   .section {
     padding: 80px 50px;
     text-align: center;
-    background: #121212;
+    background: #111111;
   }
  
   /* Grid */
@@ -66,10 +67,11 @@
   }
  
   .card {
-    background: #1e1e1e;
+    background: #1a1a1a;
     overflow: hidden;
     transition: transform 0.3s;
-    border: 1px solid #333333;
+    border-radius: 16px;
+    border: 1px solid #222222;
   }
  
   .card img {
@@ -77,7 +79,7 @@
   }
  
   .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
   }
  
   /* Form */
@@ -90,17 +92,19 @@
  
   form input, form textarea {
     margin: 10px 0;
-    padding: 10px;
-    background: #1e1e1e;
-    border: 1px solid #444;
+    padding: 12px;
+    background: #1f1f1f;
+    border: 1px solid #333;
     color: #e5e5e5;
+    border-radius: 8px;
   }
  
   button {
-    padding: 10px;
-    background: #7dd3fc;
+    padding: 12px;
+    background: #60a5fa;
     color: #111111;
     border: none;
+    border-radius: 8px;
   }
  
   /* Animation */
@@ -161,9 +165,9 @@
   .contact-info {
     margin-top: 30px;
     padding: 25px;
-    background: #1e1e1e;
-    border-radius: 15px;
-    border-left: 5px solid #7dd3fc;
+    background: #1a1a1a;
+    border-radius: 16px;
+    border-left: 5px solid #60a5fa;
   }
 
   .contact-info h3 {
@@ -225,7 +229,7 @@
   }
 
   .category {
-    color: #7dd3fc;
+    color: #60a5fa;
     font-weight: 600;
     margin-bottom: 20px;
   }
@@ -233,7 +237,7 @@
   .project-info h3 {
     margin-top: 35px;
     margin-bottom: 12px;
-    color: #e0e0e0;
+    color: #e5e5e5;
   }
 
   /* 手機版 */
@@ -246,7 +250,7 @@
 
   /* Back Button */
   .back-btn {
-    color: #bbbbbb;
+    color: #aaaaaa;
     text-decoration: none;
     font-size: 1.05rem;
     display: inline-flex;
@@ -255,6 +259,6 @@
   }
 
   .back-btn:hover {
-    color: #7dd3fc;
+    color: #60a5fa;
     text-decoration: underline;
   }
