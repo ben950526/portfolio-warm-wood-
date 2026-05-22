@@ -7,8 +7,8 @@
  
   body {
     line-height: 1.6;
-    background: #f8f1e3;        /* 溫暖木頭底色 */
-    color: #3f2a1e;
+    background: #121212;
+    color: #e5e5e5;
   }
  
   /* Navbar */
@@ -16,13 +16,14 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
-    background: #f5e8d3;
+    background: #1e1e1e;
+    border-bottom: 1px solid #2a2a2a;
   }
  
   .navbar a {
     margin-left: 20px;
     text-decoration: none;
-    color: #5c4633;
+    color: #cccccc;
   }
  
   /* Hero */
@@ -32,27 +33,29 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #f8f1e3, #e8d9c2);
+    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
   }
  
   .hero span {
-    color: #c17a4d;
+    color: #7dd3fc;
   }
  
   .btn {
     display: inline-block;
     margin-top: 15px;
-    padding: 10px 20px;
-    background: #5c4633;
-    color: #f8f1e3;
+    padding: 12px 28px;
+    background: #ffffff;
+    color: #111111;
     text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
   }
  
   /* Section */
   .section {
     padding: 80px 50px;
     text-align: center;
-    background: #f8f1e3;
+    background: #121212;
   }
  
   /* Grid */
@@ -63,10 +66,10 @@
   }
  
   .card {
-    background: #ffffff;
+    background: #1e1e1e;
     overflow: hidden;
     transition: transform 0.3s;
-    border: 1px solid #e8d9c2;
+    border: 1px solid #333333;
   }
  
   .card img {
@@ -88,15 +91,15 @@
   form input, form textarea {
     margin: 10px 0;
     padding: 10px;
-    background: white;
-    border: 1px solid #d4b88a;
-    color: #3f2a1e;
+    background: #1e1e1e;
+    border: 1px solid #444;
+    color: #e5e5e5;
   }
  
   button {
     padding: 10px;
-    background: #5c4633;
-    color: #f8f1e3;
+    background: #7dd3fc;
+    color: #111111;
     border: none;
   }
  
@@ -145,7 +148,7 @@
     height: 420px;
     border-radius: 20px;
     object-fit: cover;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
     flex-shrink: 0;
   }
 
@@ -158,20 +161,20 @@
   .contact-info {
     margin-top: 30px;
     padding: 25px;
-    background: #f8f1e3;
+    background: #1e1e1e;
     border-radius: 15px;
-    border-left: 5px solid #c17a4d;
+    border-left: 5px solid #7dd3fc;
   }
 
   .contact-info h3 {
     margin-top: 0;
     margin-bottom: 18px;
-    color: #3f2a1e;
+    color: #ffffff;
   }
 
   .contact-info p {
     margin: 10px 0;
-    color: #5c4633;
+    color: #bbbbbb;
   }
 
   /* My Projects 區塊間距調整 */
@@ -181,7 +184,7 @@
 
   #projects h2 {
     margin-bottom: 100px !important;
-    color: #3f2a1e;
+    color: #ffffff;
   }
 
   .project-detail {
@@ -206,7 +209,7 @@
     width: 100%;
     height: auto;
     border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
   }
 
   .project-info {
@@ -218,11 +221,11 @@
   .project-info h1 {
     margin-top: 0;
     font-size: 2.8rem;
-    color: #3f2a1e;
+    color: #ffffff;
   }
 
   .category {
-    color: #c17a4d;
+    color: #7dd3fc;
     font-weight: 600;
     margin-bottom: 20px;
   }
@@ -230,7 +233,7 @@
   .project-info h3 {
     margin-top: 35px;
     margin-bottom: 12px;
-    color: #3f2a1e;
+    color: #e0e0e0;
   }
 
   /* 手機版 */
@@ -243,7 +246,7 @@
 
   /* Back Button */
   .back-btn {
-    color: #5c4633;
+    color: #bbbbbb;
     text-decoration: none;
     font-size: 1.05rem;
     display: inline-flex;
@@ -252,6 +255,6 @@
   }
 
   .back-btn:hover {
-    color: #9c7a5b;
+    color: #7dd3fc;
     text-decoration: underline;
   }
