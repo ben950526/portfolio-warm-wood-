@@ -27,6 +27,7 @@
  
   
  /* Hero - 加上背景圖片 */
+/* Hero - 背景圖片不滿版 */
 .hero {
     height: 90vh;
     display: flex;
@@ -34,12 +35,24 @@
     justify-content: center;
     text-align: center;
     
-    /* 背景圖片設定 */
-    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), 
+    /* 背景圖片設定 - 不滿版 */
+    background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), 
                 url('https://picsum.photos/1920/1080?romantic') center/cover no-repeat;
     
-    color: white;                    /* 文字改成白色才看得清楚 */
+    color: white;                    /* 整體文字白色較清楚 */
     position: relative;
+}
+
+/* View My Work 按鈕保持原本顏色 */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 28px;
+    background: #ffffff;
+    color: #111111;                  /* 保持原本深色 */
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
 }
   /* Section */
   .section {
