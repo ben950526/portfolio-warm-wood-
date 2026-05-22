@@ -7,8 +7,8 @@
  
   body {
     line-height: 1.6;
-    background: #f8f1e3;        /* 溫暖木頭底色 */
-    color: #3f2a1e;
+    background: #fff0f5;        /* 浪漫粉紅底色 */
+    color: #5a2d4f;
   }
  
   /* Navbar */
@@ -16,13 +16,13 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
-    background: #f5e8d3;
+    background: #ffe4f0;
   }
  
   .navbar a {
     margin-left: 20px;
     text-decoration: none;
-    color: #5c4633;
+    color: #8c4a6f;
   }
  
   /* Hero */
@@ -32,27 +32,28 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #f8f1e3, #e8d9c2);
+    background: linear-gradient(135deg, #fff0f5, #f8d7e8);
   }
  
   .hero span {
-    color: #c17a4d;
+    color: #e07ab0;
   }
  
   .btn {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background: #5c4633;
-    color: #f8f1e3;
+    background: #e07ab0;
+    color: white;
     text-decoration: none;
+    border-radius: 50px;
   }
  
   /* Section */
   .section {
     padding: 80px 50px;
     text-align: center;
-    background: #f8f1e3;
+    background: #fff0f5;
   }
  
   /* Grid */
@@ -63,10 +64,10 @@
   }
  
   .card {
-    background: #ffffff;
+    background: white;
     overflow: hidden;
     transition: transform 0.3s;
-    border: 1px solid #e8d9c2;
+    border: 1px solid #f8d7e8;
   }
  
   .card img {
@@ -89,14 +90,14 @@
     margin: 10px 0;
     padding: 10px;
     background: white;
-    border: 1px solid #d4b88a;
-    color: #3f2a1e;
+    border: 1px solid #f8d7e8;
+    color: #5a2d4f;
   }
  
   button {
     padding: 10px;
-    background: #5c4633;
-    color: #f8f1e3;
+    background: #e07ab0;
+    color: white;
     border: none;
   }
  
@@ -158,20 +159,20 @@
   .contact-info {
     margin-top: 30px;
     padding: 25px;
-    background: #f8f1e3;
+    background: #fff0f5;
     border-radius: 15px;
-    border-left: 5px solid #c17a4d;
+    border-left: 5px solid #e07ab0;
   }
 
   .contact-info h3 {
     margin-top: 0;
     margin-bottom: 18px;
-    color: #3f2a1e;
+    color: #5a2d4f;
   }
 
   .contact-info p {
     margin: 10px 0;
-    color: #5c4633;
+    color: #8c4a6f;
   }
 
   /* My Projects 區塊間距調整 */
@@ -181,7 +182,7 @@
 
   #projects h2 {
     margin-bottom: 100px !important;
-    color: #3f2a1e;
+    color: #5a2d4f;
   }
 
   .project-detail {
@@ -218,11 +219,11 @@
   .project-info h1 {
     margin-top: 0;
     font-size: 2.8rem;
-    color: #3f2a1e;
+    color: #5a2d4f;
   }
 
   .category {
-    color: #c17a4d;
+    color: #e07ab0;
     font-weight: 600;
     margin-bottom: 20px;
   }
@@ -230,7 +231,7 @@
   .project-info h3 {
     margin-top: 35px;
     margin-bottom: 12px;
-    color: #3f2a1e;
+    color: #5a2d4f;
   }
 
   /* 手機版 */
@@ -243,7 +244,7 @@
 
   /* Back Button */
   .back-btn {
-    color: #5c4633;
+    color: #8c4a6f;
     text-decoration: none;
     font-size: 1.05rem;
     display: inline-flex;
@@ -252,6 +253,6 @@
   }
 
   .back-btn:hover {
-    color: #9c7a5b;
+    color: #e07ab0;
     text-decoration: underline;
   }
