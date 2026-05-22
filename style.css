@@ -7,59 +7,52 @@
  
   body {
     line-height: 1.6;
-    background: #f5e8d3;           /* 溫暖木頭底色 */
+    background: #f8f1e3;        /* 溫暖木頭底色 */
     color: #3f2a1e;
   }
  
-  /* Navbar - 木頭質感 */
+  /* Navbar */
   .navbar {
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
-    background: linear-gradient(#e8d5b8, #d4b88a);
-    border-bottom: 3px solid #b38b5e;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: #f5e8d3;
   }
  
   .navbar a {
     margin-left: 20px;
     text-decoration: none;
-    color: #3f2a1e;
-    font-weight: 500;
+    color: #5c4633;
   }
  
-  /* Hero - 木質氛圍 */
+  /* Hero */
   .hero {
     height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.25)), 
-                url('https://picsum.photos/1920/1080?wood-texture') center/cover;
-    color: #f5e8d3;
+    background: linear-gradient(135deg, #f8f1e3, #e8d9c2);
   }
  
   .hero span {
-    color: #f5c07a;
+    color: #c17a4d;
   }
  
   .btn {
     display: inline-block;
     margin-top: 15px;
-    padding: 12px 28px;
-    background: #3f2a1e;
-    color: #f5e8d3;
+    padding: 10px 20px;
+    background: #5c4633;
+    color: #f8f1e3;
     text-decoration: none;
-    border-radius: 50px;
-    font-weight: 500;
   }
  
   /* Section */
   .section {
     padding: 80px 50px;
     text-align: center;
-    background: #f5e8d3;
+    background: #f8f1e3;
   }
  
   /* Grid */
@@ -73,9 +66,7 @@
     background: #ffffff;
     overflow: hidden;
     transition: transform 0.3s;
-    border: 2px solid #d4b88a;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    border: 1px solid #e8d9c2;
   }
  
   .card img {
@@ -104,19 +95,64 @@
  
   button {
     padding: 10px;
-    background: #3f2a1e;
-    color: #f5e8d3;
+    background: #5c4633;
+    color: #f8f1e3;
     border: none;
   }
  
-  /* About Me */
+  /* Animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s;
+  }
+ 
+  .fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+ 
+  /* RWD */
+  @media(max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+ 
+    .navbar {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  /* About Me 區塊 */
+  .about-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
   .about-photo {
     width: 420px;
     height: 420px;
     border-radius: 20px;
     object-fit: cover;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    border: 8px solid #e8d9c2;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    flex-shrink: 0;
+  }
+
+  .about-content {
+    max-width: 480px;
+    text-align: left;
+    padding-top: 20px;
   }
 
   .contact-info {
@@ -124,20 +160,85 @@
     padding: 25px;
     background: #f8f1e3;
     border-radius: 15px;
-    border-left: 6px solid #c17a4d;
+    border-left: 5px solid #c17a4d;
   }
 
-  /* My Projects */
+  .contact-info h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #3f2a1e;
+  }
+
+  .contact-info p {
+    margin: 10px 0;
+    color: #5c4633;
+  }
+
+  /* My Projects 區塊間距調整 */
+  #projects {
+    padding-top: 80px;
+  }
+
   #projects h2 {
     margin-bottom: 100px !important;
     color: #3f2a1e;
   }
 
+  .project-detail {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .project-content {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .project-image-container {
+    flex: 1;
+    min-width: 300px;
+  }
+
   .project-image {
     width: 100%;
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  }
+
+  .project-info {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+  }
+
+  .project-info h1 {
+    margin-top: 0;
+    font-size: 2.8rem;
+    color: #3f2a1e;
+  }
+
+  .category {
+    color: #c17a4d;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .project-info h3 {
+    margin-top: 35px;
+    margin-bottom: 12px;
+    color: #3f2a1e;
+  }
+
+  /* 手機版 */
+  @media (max-width: 768px) {
+    .project-content {
+      flex-direction: column;
+      gap: 30px;
+    }
   }
 
   /* Back Button */
@@ -152,4 +253,5 @@
 
   .back-btn:hover {
     color: #9c7a5b;
+    text-decoration: underline;
   }
