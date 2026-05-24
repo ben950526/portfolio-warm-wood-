@@ -7,8 +7,8 @@
  
   body {
     line-height: 1.6;
-    background: #fff0f5;        /* 浪漫粉紅底色 */
-    color: #5a2d4f;
+    background: #0a0e1a;        /* 深邃星空底色 */
+    color: #ffffff;
   }
  
   /* Navbar */
@@ -16,43 +16,45 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
-    background: #ffe4f0;
+    background: rgba(15, 23, 42, 0.95);
   }
  
   .navbar a {
     margin-left: 20px;
     text-decoration: none;
-    color: #8c4a6f;
+    color: #ffffff;
   }
  
-  
-
- /* Hero */
+  /* Hero */
   .hero {
     height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    background: 
+        linear-gradient(rgba(8, 12, 35, 0.75), rgba(5, 8, 28, 0.85)),
+        url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat fixed;
   }
-  
+ 
   .hero span {
-    color: #007BFF;
+    color: #c4b5fd;
   }
-  
+ 
   .btn {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background: black;
-    color: white;
+    background: #7c3aed;
+    color: #ffffff;
     text-decoration: none;
   }
+ 
   /* Section */
   .section {
     padding: 80px 50px;
     text-align: center;
-    background: #fff0f5;
+    background: #0a0e1a;
   }
  
   /* Grid */
@@ -63,10 +65,10 @@
   }
  
   .card {
-    background: white;
+    background: rgba(30, 27, 48, 0.85);
     overflow: hidden;
     transition: transform 0.3s;
-    border: 1px solid #f8d7e8;
+    border: 1px solid rgba(167, 139, 250, 0.4);
   }
  
   .card img {
@@ -88,15 +90,15 @@
   form input, form textarea {
     margin: 10px 0;
     padding: 10px;
-    background: white;
-    border: 1px solid #f8d7e8;
-    color: #5a2d4f;
+    background: #0a0e1a;
+    border: 1px solid rgba(167, 139, 250, 0.5);
+    color: #ffffff;
   }
  
   button {
     padding: 10px;
-    background: #e07ab0;
-    color: white;
+    background: #7c3aed;
+    color: #ffffff;
     border: none;
   }
  
@@ -145,7 +147,7 @@
     height: 420px;
     border-radius: 20px;
     object-fit: cover;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    box-shadow: 0 15px 35px rgba(167, 139, 250, 0.3);
     flex-shrink: 0;
   }
 
@@ -158,20 +160,20 @@
   .contact-info {
     margin-top: 30px;
     padding: 25px;
-    background: #fff0f5;
+    background: #0a0e1a;
     border-radius: 15px;
-    border-left: 5px solid #e07ab0;
+    border-left: 5px solid #a855f7;
   }
 
   .contact-info h3 {
     margin-top: 0;
     margin-bottom: 18px;
-    color: #5a2d4f;
+    color: #ffffff;
   }
 
   .contact-info p {
     margin: 10px 0;
-    color: #8c4a6f;
+    color: #e0e7ff;
   }
 
   /* My Projects 區塊間距調整 */
@@ -181,7 +183,7 @@
 
   #projects h2 {
     margin-bottom: 100px !important;
-    color: #5a2d4f;
+    color: #ffffff;
   }
 
   .project-detail {
@@ -206,7 +208,7 @@
     width: 100%;
     height: auto;
     border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
   }
 
   .project-info {
@@ -218,11 +220,11 @@
   .project-info h1 {
     margin-top: 0;
     font-size: 2.8rem;
-    color: #5a2d4f;
+    color: #ffffff;
   }
 
   .category {
-    color: #e07ab0;
+    color: #c4b5fd;
     font-weight: 600;
     margin-bottom: 20px;
   }
@@ -230,7 +232,7 @@
   .project-info h3 {
     margin-top: 35px;
     margin-bottom: 12px;
-    color: #5a2d4f;
+    color: #ffffff;
   }
 
   /* 手機版 */
@@ -243,7 +245,7 @@
 
   /* Back Button */
   .back-btn {
-    color: #8c4a6f;
+    color: #ffffff;
     text-decoration: none;
     font-size: 1.05rem;
     display: inline-flex;
@@ -252,6 +254,6 @@
   }
 
   .back-btn:hover {
-    color: #e07ab0;
+    color: #e0e7ff;
     text-decoration: underline;
   }
