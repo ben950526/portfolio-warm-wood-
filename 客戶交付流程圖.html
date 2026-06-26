@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品集網站 · 交易交付流程</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f0f4f8;
+      --card: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --accent: #4f46e5;
+      --accent-light: #eef2ff;
+      --success: #059669;
+      --success-light: #ecfdf5;
+      --warning: #d97706;
+      --warning-light: #fffbeb;
+      --border: #e2e8f0;
+      --shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 8px 32px rgba(79, 70, 229, 0.15);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 2rem 1rem 3rem;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    .header h1 {
+      font-size: 1.75rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Flow */
+    .flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .step {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .step:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    .step-body h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .step-body p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .step-icon {
+      font-size: 1.5rem;
+      margin-left: auto;
+      flex-shrink: 0;
+      opacity: 0.85;
+    }
+
+    /* Connector */
+    .connector {
+      width: 2px;
+      height: 28px;
+      background: linear-gradient(to bottom, var(--accent), #a5b4fc);
+      position: relative;
+    }
+
+    .connector::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid #a5b4fc;
+    }
+
+    /* Decision branch */
+    .branch-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .decision {
+      width: 100%;
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 1px solid #fcd34d;
+      border-radius: 16px;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .decision p {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #92400e;
+    }
+
+    .branch-row {
+      display: flex;
+      width: 100%;
+      gap: 1rem;
+      margin-top: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .branch-card {
+      flex: 1;
+      min-width: 200px;
+      max-width: 280px;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .branch-card.no {
+      background: var(--warning-light);
+      border: 1px solid #fcd34d;
+      color: #92400e;
+    }
+
+    .branch-card.yes {
+      background: var(--accent-light);
+      border: 1px solid #a5b4fc;
+      color: var(--accent);
+    }
+
+    .branch-card strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .branch-merge {
+      width: 2px;
+      height: 24px;
+      background: #a5b4fc;
+      margin: 0.75rem 0;
+    }
+
+    /* Success steps */
+    .step.success .step-num {
+      background: var(--success);
+    }
+
+    .step.final {
+      background: linear-gradient(135deg, var(--success-light) 0%, #d1fae5 100%);
+      border-color: #6ee7b7;
+    }
+
+    .step.final .step-num {
+      background: var(--success);
+      font-size: 1.25rem;
+    }
+
+    .step.final h2 {
+      color: var(--success);
+    }
+
+    /* Footer note */
+    .footer-note {
+      margin-top: 2rem;
+      text-align: center;
+      padding: 1.25rem;
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px dashed var(--border);
+    }
+
+    .footer-note p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .footer-note strong {
+      color: var(--text);
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      margin-top: 1rem;
+      padding: 1.25rem 1.35rem;
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-radius: 12px;
+      text-align: left;
+    }
+
+    .disclaimer-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .disclaimer ul {
+      list-style: none;
+      font-size: 0.82rem;
+      color: #78350f;
+      line-height: 1.75;
+    }
+
+    .disclaimer li {
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .disclaimer li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #d97706;
+      font-weight: 700;
+    }
+
+    .disclaimer li strong {
+      color: #92400e;
+    }
+
+    /* Print / screenshot */
+    @media print {
+      body { background: #fff; padding: 1rem; }
+      .step:hover { transform: none; }
+    }
+
+    @media (max-width: 480px) {
+      .header h1 { font-size: 1.4rem; }
+      .step { padding: 1rem; }
+      .step-icon { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <span class="badge">PORTFOLIO WEBSITE SERVICE</span>
+      <h1>作品集網站 · 交易交付流程</h1>
+      <p>從付款到上線，全程透明。約 3～5 個工作天完成，<br>約 20 分鐘完成交付，網站與程式碼完全歸你所有。</p>
+    </header>
+
+    <div class="flow">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h2>完成付款</h2>
+          <p>確認訂單後，你會收到建站資料表連結。</p>
+        </div>
+        <span class="step-icon">🛒</span>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h2>填寫建站資料表</h2>
+          <p>提供姓名、自我介紹、作品與圖片（約 30～60 分鐘）。</p>
+        </div>
+        <span class="step-icon">📝</span>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h2>設計師製作網站</h2>
+          <p>依你的資料客製完成，約 3～5 個工作天。</p>
+        </div>
+        <span class="step-icon">⏳</span>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="branch-wrap">
+        <div class="decision">
+          <p>❓ 資料是否完整？</p>
+        </div>
+        <div class="branch-row">
+          <div class="branch-card no">
+            <strong>缺資料</strong>
+            📧 補件通知，請你補圖或文字 → 回到步驟 3
+          </div>
+          <div class="branch-card yes">
+            <strong>完整 ✓</strong>
+            繼續下一步
+          </div>
+        </div>
+        <div class="branch-merge"></div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h2>約定 20 分鐘交付時間</h2>
+          <p>確認方便時段，請準備 Email 與手機（收驗證碼用）。</p>
+        </div>
+        <span class="step-icon">📅</span>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h2>20 分鐘交付交接</h2>
+          <p>建立 GitHub + Vercel 帳號、部署上線；需要時請你提供驗證碼。</p>
+        </div>
+        <span class="step-icon">💻</span>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="step success">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <h2>網站正式上線</h2>
+          <p>你取得 Vercel 網址（例：xxx.vercel.app）與 GitHub 程式碼，帳號在你名下。</p>
+        </div>
+        <span class="step-icon">🌐</span>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="step final">
+        <div class="step-num">✓</div>
+        <div class="step-body">
+          <h2>交易完成</h2>
+          <p>作品集網站歸你所有，隨時可分享給客戶與雇主。</p>
+        </div>
+        <span class="step-icon">🎉</span>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <p>
+        <strong>交付包含：</strong>完整網站 · Vercel 線上網址 · GitHub 原始碼 · 帳號所有權<br>
+        沒有 GitHub 帳號也沒關係，交付時我會協助你完成設定。
+      </p>
+    </div>
+
+    <div class="disclaimer">
+      <div class="disclaimer-title">⚠️ 重要說明（購買前請知悉）</div>
+      <ul>
+        <li><strong>本服務不包含自訂網域設定</strong>（例：www.你的名字.com），交付網址為 Vercel 免費網址。</li>
+        <li><strong>Google 搜尋找不到你的網站</strong>，訪客無法用關鍵字搜尋進入。</li>
+        <li>請透過<strong>分享網址</strong>或<strong>QR Code</strong> 讓他人造訪（例：履歷、IG 自介、名片）。</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

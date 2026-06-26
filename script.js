@@ -1,17 +1,18 @@
 const elements = document.querySelectorAll('.fade-in');
 
-function showOnScroll() {
-  elements.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 50) {
-      el.classList.add('show');
-    }
-  });
+if (elements.length && 'IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: '0px 0px -40px 0px', threshold: 0.05 }
+  );
+  elements.forEach((el) => observer.observe(el));
+} else {
+  elements.forEach((el) => el.classList.add('show'));
 }
-
-// 滑動時
-window.addEventListener('scroll', showOnScroll);
-
-// ⭐ 一進頁面就執行一次
-window.addEventListener('load', showOnScroll);
-

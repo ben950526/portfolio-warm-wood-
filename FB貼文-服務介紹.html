@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FB 貼文 · 作品集網站服務</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef2ff;
+      --card: #fff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --accent: #4f46e5;
+      --accent-soft: #eef2ff;
+      --success: #059669;
+      --success-soft: #ecfdf5;
+      --warn: #fffbeb;
+      --warn-border: #fcd34d;
+      --warn-text: #92400e;
+      --border: #e2e8f0;
+      --sale: #dc2626;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 2rem 1.25rem 2.5rem;
+    }
+
+    .canvas { max-width: 680px; margin: 0 auto; }
+
+    .hero { text-align: center; margin-bottom: 1.5rem; }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--sale);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      font-size: 1.75rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 0.45rem;
+    }
+
+    .hero p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.15rem 1.25rem;
+      margin-bottom: 0.85rem;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    .section-title {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .service-list { display: grid; gap: 0.5rem; }
+
+    .service-item {
+      display: flex;
+      gap: 0.6rem;
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .service-item .icon { flex-shrink: 0; width: 20px; text-align: center; }
+    .service-item span { color: var(--muted); }
+
+    .styles-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.65rem;
+    }
+
+    .style-pill {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.28rem 0.6rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    /* Pricing */
+    .price-cards { display: grid; gap: 0.55rem; }
+
+    .price-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.15rem 0.75rem;
+      align-items: center;
+    }
+
+    .price-card.featured {
+      border-color: var(--accent);
+      background: linear-gradient(135deg, #fafafe 0%, var(--accent-soft) 100%);
+      position: relative;
+    }
+
+    .price-card.featured::after {
+      content: '最多人選';
+      position: absolute;
+      top: -8px;
+      right: 12px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+    }
+
+    .price-name { font-weight: 700; font-size: 0.88rem; }
+    .price-detail { grid-column: 1; font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+
+    .price-col {
+      grid-row: 1 / 3;
+      grid-column: 2;
+      text-align: right;
+    }
+
+    .price-original {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      text-decoration: line-through;
+      margin-bottom: 0.1rem;
+    }
+
+    .price-sale {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--sale);
+      white-space: nowrap;
+    }
+
+    .price-sale-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: var(--sale);
+      background: #fef2f2;
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+      margin-right: 0.2rem;
+      vertical-align: middle;
+    }
+
+    .price-note {
+      margin-top: 0.55rem;
+      font-size: 0.68rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Flow — unified blue / white */
+    .flow { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+    .flow-step {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.65rem 0.85rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+    }
+
+    .flow-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.82rem;
+    }
+
+    .flow-body h3 { font-size: 0.82rem; font-weight: 700; margin-bottom: 0.1rem; color: var(--text); }
+    .flow-body p { font-size: 0.7rem; color: var(--muted); line-height: 1.45; }
+
+    .flow-conn {
+      width: 2px;
+      height: 14px;
+      background: #c7d2fe;
+    }
+
+    .flow-decision {
+      width: 100%;
+      background: var(--accent-soft);
+      border: 1px solid #c7d2fe;
+      border-radius: 12px;
+      padding: 0.55rem 0.75rem;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .flow-branch {
+      display: flex;
+      gap: 0.45rem;
+      width: 100%;
+      margin: 0.45rem 0;
+    }
+
+    .flow-branch-card {
+      flex: 1;
+      border-radius: 12px;
+      padding: 0.45rem 0.5rem;
+      font-size: 0.62rem;
+      line-height: 1.4;
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .flow-branch-card.yes {
+      background: var(--accent-soft);
+      border-color: #c7d2fe;
+      color: var(--accent);
+    }
+
+    .flow-branch-card strong { display: block; font-size: 0.68rem; margin-bottom: 0.1rem; color: var(--text); }
+    .flow-branch-card.yes strong { color: var(--accent); }
+
+    /* Disclaimer */
+    .disclaimer {
+      background: var(--warn);
+      border: 1px solid var(--warn-border);
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .disclaimer-title {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--warn-text);
+      margin-bottom: 0.4rem;
+    }
+
+    .disclaimer ul {
+      list-style: none;
+      font-size: 0.68rem;
+      color: #78350f;
+      line-height: 1.6;
+    }
+
+    .disclaimer li { padding-left: 0.85rem; position: relative; }
+    .disclaimer li::before { content: '•'; position: absolute; left: 0; font-weight: 700; }
+
+    /* Footer CTA */
+    .footer-cta {
+      text-align: center;
+      background: var(--card);
+      border: 2px solid var(--accent);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .footer-cta p {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .footer-cta small {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <header class="hero">
+      <span class="hero-tag">🔥 限時早鳥價</span>
+      <h1>設計師作品集網站<br>一次買斷 · 網站交付</h1>
+      <p>4 款質感模板任選 · 3～5 工作天交付<br>程式碼與帳號完全歸你</p>
+    </header>
+
+    <section class="section">
+      <div class="section-title">01 · 我提供的服務</div>
+      <div class="service-list">
+        <div class="service-item"><span class="icon">✓</span><div><strong>4 款風格模板任選</strong> <span>— 暖木 / 柔和粉 / 暗色 / 極簡</span></div></div>
+        <div class="service-item"><span class="icon">✓</span><div><strong>依你的資料客製內容</strong> <span>— 大頭照、自我介紹、作品、聯絡方式</span></div></div>
+        <div class="service-item"><span class="icon">✓</span><div><strong>含聯絡表單</strong> <span>— 訪客留言直接寄到你的 Email</span></div></div>
+        <div class="service-item"><span class="icon">✓</span><div><strong>部署交付 + 程式碼交接</strong> <span>— GitHub 原始碼、Vercel 網址、帳號在你名下</span></div></div>
+        <div class="service-item"><span class="icon">✓</span><div><strong>手機版 RWD</strong> <span>— 履歷、IG 自介分享都好看</span></div></div>
+      </div>
+      <div class="styles-row">
+        <span class="style-pill">暖木風</span>
+        <span class="style-pill">柔和粉紅</span>
+        <span class="style-pill">Apple 暗色</span>
+        <span class="style-pill">現代極簡</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">02 · 方案價格（一次買斷 · 無月租）</div>
+      <div class="price-cards">
+        <div class="price-card">
+          <div class="price-name">輕量版</div>
+          <div class="price-detail">1～3 件作品 · 不含風格展示區</div>
+          <div class="price-col">
+            <div class="price-original">原價 $4,980</div>
+            <div class="price-sale"><span class="price-sale-label">早鳥</span>$3,480</div>
+          </div>
+        </div>
+        <div class="price-card featured">
+          <div class="price-name">標準版</div>
+          <div class="price-detail">4～6 件作品 · 含 My Style 風格展示</div>
+          <div class="price-col">
+            <div class="price-original">原價 $6,980</div>
+            <div class="price-sale"><span class="price-sale-label">早鳥</span>$5,480</div>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="price-name">完整版</div>
+          <div class="price-detail">7～9 件作品 · 含 My Style 風格展示</div>
+          <div class="price-col">
+            <div class="price-original">原價 $8,980</div>
+            <div class="price-sale"><span class="price-sale-label">早鳥</span>$6,980</div>
+          </div>
+        </div>
+      </div>
+      <p class="price-note">※ 含建站、部署、交接。不含自訂網域。加購：每件額外作品 +$800</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">03 · 交易流程</div>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-body"><h3>完成付款</h3><p>確認訂單後，你會收到建站資料表連結。</p></div>
+        </div>
+        <div class="flow-conn"></div>
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-body"><h3>填寫建站資料表</h3><p>提供姓名、自我介紹、作品與圖片（約 30～60 分鐘）。</p></div>
+        </div>
+        <div class="flow-conn"></div>
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-body"><h3>設計師製作網站</h3><p>依你的資料客製完成，約 3～5 個工作天。</p></div>
+        </div>
+        <div class="flow-conn"></div>
+        <div class="flow-decision">❓ 資料是否完整？</div>
+        <div class="flow-branch">
+          <div class="flow-branch-card no"><strong>缺資料</strong>📧 補件通知 → 回到步驟 3</div>
+          <div class="flow-branch-card yes"><strong>完整 ✓</strong>繼續下一步</div>
+        </div>
+        <div class="flow-conn"></div>
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-body"><h3>約定 20 分鐘交付時間</h3><p>確認方便時段，請準備 Email 與手機（收驗證碼用）。</p></div>
+        </div>
+        <div class="flow-conn"></div>
+        <div class="flow-step">
+          <div class="flow-num">5</div>
+          <div class="flow-body"><h3>20 分鐘交付交接</h3><p>建立 GitHub + Vercel 帳號、完成部署；需要時請你提供驗證碼。</p></div>
+        </div>
+        <div class="flow-conn"></div>
+        <div class="flow-step">
+          <div class="flow-num">6</div>
+          <div class="flow-body"><h3>網站交付完成</h3><p>你取得 Vercel 網址與 GitHub 程式碼，帳號在你名下。</p></div>
+        </div>
+        <div class="flow-conn"></div>
+        <div class="flow-step">
+          <div class="flow-num">✓</div>
+          <div class="flow-body"><h3>交易完成</h3><p>作品集網站歸你所有，分享網址或 QR Code 給他人。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="disclaimer">
+      <div class="disclaimer-title">⚠️ 購買前請知悉</div>
+      <ul>
+        <li><strong>不含自訂網域</strong>，交付為 Vercel 免費網址（例 xxx.vercel.app）</li>
+        <li><strong>Google 搜尋找不到</strong>，需透過分享網址或 QR Code 讓他人進入</li>
+        <li>交付時約 20 分鐘，需要驗證碼時請配合提供</li>
+      </ul>
+    </div>
+
+    <div class="footer-cta">
+      <p>有意購買歡迎私訊討論</p>
+      <small>早鳥價名額有限</small>
+    </div>
+  </div>
+</body>
+</html>
