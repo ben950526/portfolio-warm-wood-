@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>FB 輪播 03 · 流程</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef2ff;
+      --card: #fff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --accent: #4f46e5;
+      --accent-soft: #eef2ff;
+      --border: #e2e8f0;
+      --warn: #fffbeb;
+      --warn-border: #fcd34d;
+      --warn-text: #92400e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans TC', system-ui, sans-serif;
+      width: 1080px;
+      height: 1350px;
+      background: var(--bg);
+      color: var(--text);
+      overflow: hidden;
+      padding: 48px 48px 40px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .slide-badge {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--muted);
+      background: rgba(255,255,255,0.85);
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+    .hero { text-align: center; margin-bottom: 24px; }
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .hero p { font-size: 22px; color: var(--muted); }
+    .flow { display: flex; flex-direction: column; gap: 0; margin-bottom: 20px; }
+    .flow-step {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+    }
+    .flow-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 22px;
+    }
+    .flow-body h3 { font-size: 24px; font-weight: 700; margin-bottom: 2px; }
+    .flow-body p { font-size: 19px; color: var(--muted); line-height: 1.4; }
+    .flow-conn {
+      width: 3px;
+      height: 10px;
+      background: #c7d2fe;
+      margin: 0 auto;
+    }
+    .flow-note {
+      text-align: center;
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 600;
+      padding: 8px;
+      background: var(--accent-soft);
+      border-radius: 10px;
+      margin: 4px 0;
+    }
+    .addons {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-bottom: 16px;
+    }
+    .addons-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .custom-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .custom-tag {
+      font-size: 17px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid #c7d2fe;
+    }
+    .disclaimer {
+      background: var(--warn);
+      border: 2px solid var(--warn-border);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .disclaimer-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--warn-text);
+      margin-bottom: 8px;
+    }
+    .disclaimer ul {
+      list-style: none;
+      font-size: 18px;
+      color: #78350f;
+      line-height: 1.55;
+    }
+    .disclaimer li { padding-left: 16px; position: relative; }
+    .disclaimer li::before { content: '•'; position: absolute; left: 0; font-weight: 700; }
+    .footer-cta {
+      margin-top: auto;
+      text-align: center;
+      background: var(--card);
+      border: 3px solid var(--accent);
+      border-radius: 18px;
+      padding: 22px;
+    }
+    .footer-cta p {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .footer-cta small { font-size: 20px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <span class="slide-badge">3 / 3</span>
+  <header class="hero">
+    <h1>交易流程</h1>
+    <p>付款 → 填表 → 製作 → 20 分鐘交付</p>
+  </header>
+
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div class="flow-body"><h3>完成付款</h3><p>收到建站資料表連結</p></div>
+    </div>
+    <div class="flow-conn"></div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div class="flow-body"><h3>填寫建站資料表</h3><p>提供作品與圖片（約 30～60 分鐘）</p></div>
+    </div>
+    <div class="flow-conn"></div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div class="flow-body"><h3>設計師製作網站</h3><p>依資料客製，約 3～5 個工作天</p></div>
+    </div>
+    <div class="flow-note">資料不全會 Email 通知補件，補齊後繼續製作</div>
+    <div class="flow-conn"></div>
+    <div class="flow-step">
+      <div class="flow-num">4</div>
+      <div class="flow-body"><h3>20 分鐘交付交接</h3><p>建立 GitHub + Vercel，帳號在你名下</p></div>
+    </div>
+    <div class="flow-conn"></div>
+    <div class="flow-step">
+      <div class="flow-num">✓</div>
+      <div class="flow-body"><h3>交易完成</h3><p>取得網址與程式碼，分享給他人</p></div>
+    </div>
+  </div>
+
+  <div class="addons">
+    <div class="addons-title">04 · 加購客製化（另議報價）</div>
+    <div class="custom-tags">
+      <span class="custom-tag">報價頁</span>
+      <span class="custom-tag">FAQ</span>
+      <span class="custom-tag">預約表單</span>
+      <span class="custom-tag">中英雙語</span>
+      <span class="custom-tag">作品篩選</span>
+      <span class="custom-tag">Line 按鈕</span>
+      <span class="custom-tag">履歷 PDF</span>
+      <span class="custom-tag">更多私訊討論</span>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ 購買前請知悉</div>
+    <ul>
+      <li><strong>不含自訂網域</strong>，交付為 Vercel 免費網址</li>
+      <li><strong>Google 搜尋找不到</strong>，需分享網址或 QR Code</li>
+      <li>交付約 20 分鐘，驗證碼時請配合提供</li>
+    </ul>
+  </div>
+
+  <div class="footer-cta">
+    <p>有意購買歡迎私訊討論</p>
+    <small>早鳥價名額有限</small>
+  </div>
+</body>
+</html>

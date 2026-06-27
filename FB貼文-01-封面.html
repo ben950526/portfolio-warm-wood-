@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>FB 輪播 01 · 封面</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef2ff;
+      --card: #fff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --accent: #4f46e5;
+      --accent-soft: #eef2ff;
+      --border: #e2e8f0;
+      --sale: #dc2626;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans TC', system-ui, sans-serif;
+      width: 1080px;
+      height: 1350px;
+      background: var(--bg);
+      color: var(--text);
+      overflow: hidden;
+      padding: 56px 52px 48px;
+      display: flex;
+      flex-direction: column;
+    }
+    .hero { text-align: center; margin-bottom: 36px; }
+    .hero-tag {
+      display: inline-block;
+      background: var(--sale);
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 10px 28px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1.22;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 24px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::before {
+      content: '';
+      width: 6px;
+      height: 22px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+    .price-cards {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .price-card {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 32px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 6px 24px;
+      align-items: center;
+      box-shadow: 0 6px 24px rgba(15, 23, 42, 0.07);
+    }
+    .price-card.featured {
+      border-color: var(--accent);
+      background: linear-gradient(135deg, #fafafe 0%, var(--accent-soft) 100%);
+      position: relative;
+    }
+    .price-card.featured::after {
+      content: '最多人選';
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+    .price-name { font-weight: 700; font-size: 30px; }
+    .price-detail { grid-column: 1; font-size: 22px; color: var(--muted); line-height: 1.4; }
+    .price-col { grid-row: 1 / 3; grid-column: 2; text-align: right; }
+    .price-original {
+      font-size: 22px;
+      color: #94a3b8;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .price-sale {
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--sale);
+      white-space: nowrap;
+    }
+    .price-sale-label {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--sale);
+      background: #fef2f2;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .price-note {
+      margin-top: 18px;
+      font-size: 20px;
+      color: var(--muted);
+      line-height: 1.5;
+      text-align: center;
+    }
+    .footer-cta {
+      margin-top: auto;
+      text-align: center;
+      background: var(--card);
+      border: 3px solid var(--accent);
+      border-radius: 18px;
+      padding: 28px;
+    }
+    .footer-cta p {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .footer-cta small {
+      font-size: 22px;
+      color: var(--muted);
+    }
+    .slide-badge {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--muted);
+      background: rgba(255,255,255,0.85);
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+    body { position: relative; }
+  </style>
+</head>
+<body>
+  <span class="slide-badge">1 / 3</span>
+  <header class="hero">
+    <span class="hero-tag">🔥 限時早鳥價</span>
+    <h1>設計師作品集網站<br>一次買斷 · 網站交付</h1>
+    <p>4 款質感模板任選 · 3～5 工作天交付<br>程式碼與帳號完全歸你</p>
+  </header>
+
+  <div class="section-title">方案價格（一次買斷 · 無月租）</div>
+  <div class="price-cards">
+    <div class="price-card">
+      <div class="price-name">輕量版</div>
+      <div class="price-detail">最多 6 件作品 · 不含風格展示區</div>
+      <div class="price-col">
+        <div class="price-original">原價 $4,980</div>
+        <div class="price-sale"><span class="price-sale-label">早鳥</span>$3,480</div>
+      </div>
+    </div>
+    <div class="price-card featured">
+      <div class="price-name">標準版</div>
+      <div class="price-detail">最多 9 件作品 · 含 My Style 風格展示</div>
+      <div class="price-col">
+        <div class="price-original">原價 $6,980</div>
+        <div class="price-sale"><span class="price-sale-label">早鳥</span>$5,480</div>
+      </div>
+    </div>
+    <div class="price-card">
+      <div class="price-name">完整版</div>
+      <div class="price-detail">最多 12 件作品 · 含 My Style 風格展示</div>
+      <div class="price-col">
+        <div class="price-original">原價 $8,980</div>
+        <div class="price-sale"><span class="price-sale-label">早鳥</span>$6,980</div>
+      </div>
+    </div>
+  </div>
+  <p class="price-note">※ 含建站、部署、交接。不含自訂網域。加購：每件額外作品 +$800</p>
+
+  <div class="footer-cta">
+    <p>👉 左滑看服務內容</p>
+    <small>有意購買歡迎私訊討論 · 早鳥名額有限</small>
+  </div>
+</body>
+</html>

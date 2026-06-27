@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>FB 輪播 02 · 服務</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef2ff;
+      --card: #fff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --accent: #4f46e5;
+      --accent-soft: #eef2ff;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans TC', system-ui, sans-serif;
+      width: 1080px;
+      height: 1350px;
+      background: var(--bg);
+      color: var(--text);
+      overflow: hidden;
+      padding: 56px 52px 48px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .slide-badge {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--muted);
+      background: rgba(255,255,255,0.85);
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+    .hero { text-align: center; margin-bottom: 32px; }
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 900;
+      line-height: 1.25;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .hero p { font-size: 24px; color: var(--muted); }
+    .section {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 40px;
+      box-shadow: 0 6px 24px rgba(15, 23, 42, 0.07);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::before {
+      content: '';
+      width: 6px;
+      height: 24px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+    .service-list { display: flex; flex-direction: column; gap: 22px; flex: 1; }
+    .service-item {
+      display: flex;
+      gap: 16px;
+      font-size: 26px;
+      line-height: 1.45;
+      align-items: flex-start;
+    }
+    .service-item .icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 20px;
+    }
+    .service-item strong { display: block; font-size: 28px; margin-bottom: 4px; }
+    .service-item span { color: var(--muted); font-size: 22px; }
+    .styles-block {
+      margin-top: auto;
+      padding-top: 28px;
+      border-top: 2px solid var(--border);
+    }
+    .styles-label {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .styles-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .style-pill {
+      font-size: 22px;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 2px solid #c7d2fe;
+    }
+    .demo-note {
+      margin-top: 20px;
+      font-size: 20px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .footer-cta {
+      margin-top: 24px;
+      text-align: center;
+      background: var(--card);
+      border: 3px solid var(--accent);
+      border-radius: 18px;
+      padding: 24px;
+    }
+    .footer-cta p {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <span class="slide-badge">2 / 3</span>
+  <header class="hero">
+    <h1>我提供的服務</h1>
+    <p>依你的資料客製 · 交付後完全歸你</p>
+  </header>
+
+  <section class="section">
+    <div class="section-title">01 · 服務內容</div>
+    <div class="service-list">
+      <div class="service-item">
+        <span class="icon">✓</span>
+        <div>
+          <strong>4 款風格模板任選</strong>
+          <span>暖木 / 柔和粉 / 暗色 / 現代極簡</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="icon">✓</span>
+        <div>
+          <strong>依你的資料客製內容</strong>
+          <span>大頭照、自我介紹、作品、聯絡方式</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="icon">✓</span>
+        <div>
+          <strong>含聯絡表單</strong>
+          <span>訪客留言直接寄到你的 Email</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="icon">✓</span>
+        <div>
+          <strong>部署交付 + 程式碼交接</strong>
+          <span>GitHub 原始碼、Vercel 網址、帳號在你名下</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="icon">✓</span>
+        <div>
+          <strong>手機版 RWD</strong>
+          <span>履歷、IG 自介分享都好看</span>
+        </div>
+      </div>
+    </div>
+    <div class="styles-block">
+      <div class="styles-label">4 款模板風格</div>
+      <div class="styles-row">
+        <span class="style-pill">暖木風</span>
+        <span class="style-pill">柔和粉紅</span>
+        <span class="style-pill">Apple 暗色</span>
+        <span class="style-pill">現代極簡</span>
+      </div>
+      <p class="demo-note">💡 貼文留言附 4 款 demo 連結，可直接預覽效果</p>
+    </div>
+  </section>
+
+  <div class="footer-cta">
+    <p>👉 左滑看交易流程</p>
+  </div>
+</body>
+</html>
