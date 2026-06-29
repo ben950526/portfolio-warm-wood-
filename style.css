@@ -485,6 +485,19 @@ button:hover {
     padding: 16px 24px;
   }
 
+  .hero {
+    height: auto;
+    min-height: 300px;
+    margin: 8px 18px 0;
+    padding: 44px 24px;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .hero h2 {
+    font-size: 1.75rem;
+  }
+
   .section {
     padding: 60px 24px;
   }
