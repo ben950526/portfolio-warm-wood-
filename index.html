@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Warm Wood Portfolio</title>
+  <meta name="description" content="形象網站模板 DEMO 展示（暖木風）— 圖文為示範假資料，交付時依您的資料客製。">
+  <title>形象網站模板 DEMO｜暖木風</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<p class="demo-bar">⚠️ 此為 <strong>形象網站模板 DEMO</strong> · 圖文皆為示範假資料 · 交付時依您的品牌／作品客製 · BlazeAtlas studio</p>
+
 <!-- Navbar -->
 <nav class="navbar">
     <div class="logo">
-        <h2>MyPortfolio</h2>
+        <h2>Demo 範例</h2>
     </div>
     
     <div class="nav-links">
@@ -19,26 +22,28 @@
         <a href="index.html#about">About</a>
         <a href="index.html#style">Style</a>
         <a href="projects.html">Projects</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="index.html#contact">LINE</a>
     </div>
 </nav>
 
 <!-- Hero -->
 <section id="home" class="hero fade-in">
   <div>
+    <span class="hero-tag">模板 DEMO · 示範假資料</span>
+    <p class="customize-hint">✏️ 可客製：姓名／品牌名、標語、背景圖、按鈕文字與連結</p>
     <h2>Hi, I'm <span>xxx</span></h2>
     <p>Creative Designer | UI/UX | Branding</p>
     <a href="projects.html" class="btn">View My Work</a>
   </div>
 </section>
+
 <!-- About -->
 <section id="about" class="section fade-in">
-  
+  <p class="customize-hint">✏️ 可客製：個人／品牌照片、自我介紹文案、IG／電話／Email 等聯絡方式</p>
   <h2>About Me</h2>
 
   <div class="about-container">
-    
-    <img loading="lazy" decoding="async" src="images/about.jpg" alt="BEN 照片" class="about-photo">
+    <img loading="lazy" decoding="async" src="images/about.jpg" alt="示範照片" class="about-photo">
 
     <div class="about-content">
       <h3 class="about-heading">自我介紹</h3>
@@ -47,21 +52,20 @@
         我喜歡打造簡潔、直覺且有轉換力的網站體驗。
       </p>
 
-      <!-- 聯絡資訊放在 About Me 裡面 -->
       <div class="contact-info">
         <h3>聯絡資訊</h3>
         <p><strong>Instagram：</strong> @ABC123</p>
         <p><strong>電話：</strong> 09XX-XXX-XXX</p>
         <p><strong>Email：</strong> your.email@example.com</p>
+        <p><strong>LINE：</strong> @demo-example</p>
       </div>
     </div>
-
   </div>
-
 </section>
 
 <!-- My Style -->
 <section id="style" class="section fade-in">
+  <p class="customize-hint">✏️ 可客製：區塊標題、卡片數量、每張圖片／標題／說明（可改為服務項目、風格、案例分類）</p>
   <h2>My Style</h2>
   <p class="section-intro">
     以下是我擅長的三種設計風格，點擊可了解更多細節
@@ -96,22 +100,41 @@
   </div>
 </section>
 
-
-
-<!-- Contact -->
+<!-- LINE Contact -->
 <section id="contact" class="section fade-in">
-  <h2>Contact Me</h2>
-  <form action="https://formspree.io/f/mdabajrn" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Send</button>
-  </form>
+  <p class="customize-hint">✏️ 可客製：區塊標題、LINE ID、加好友連結、QR Code 圖片</p>
+  <h2>LINE 聯絡</h2>
+  <div class="line-contact">
+    <p class="section-intro">歡迎透過 LINE 與我聯繫（以下為 DEMO 示範，交付時替換為您的資訊）</p>
+    <div class="line-box">
+      <p class="line-id"><strong>LINE ID：</strong> @demo-example</p>
+      <a href="#" class="btn btn-line" onclick="return false;">加入 LINE 好友（DEMO 範例）</a>
+      <p class="line-note">可改為您的 LINE 加好友連結，或放上 QR Code 圖片</p>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 Your Name</p>
+  <p>© 2026 BlazeAtlas Studio · 形象網站模板 DEMO · 非真實客戶資料</p>
 </footer>
+
+<button type="button" class="demo-guide-fab" aria-label="查看可客製項目">📋 哪些可改？</button>
+
+<aside class="demo-guide-panel" aria-hidden="true">
+  <div class="demo-guide-header">
+    <h3>此模板可客製項目</h3>
+    <button type="button" class="demo-guide-close" aria-label="關閉">✕</button>
+  </div>
+  <ul class="demo-guide-list">
+    <li><strong>整體</strong>：配色氛圍、Logo 文字、導覽列項目名稱</li>
+    <li><strong>首頁</strong>：姓名／品牌名、標語、背景圖、按鈕文字與連結</li>
+    <li><strong>關於我</strong>：照片、自我介紹、IG／電話／Email／LINE</li>
+    <li><strong>風格／服務區</strong>：標題、卡片內容（可改服務項目或案例分類）</li>
+    <li><strong>作品頁</strong>：作品數量 6／9／12 件，每件圖文與說明</li>
+    <li><strong>LINE 聯絡區</strong>：LINE ID、加好友連結、QR Code</li>
+  </ul>
+  <p class="demo-guide-note">以上為示範假資料，交付時依您提供的內容替換，不用擔心套版感。</p>
+</aside>
 
 <script src="script.js"></script>
 </body>
